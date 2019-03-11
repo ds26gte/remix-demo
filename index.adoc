@@ -1,0 +1,4 @@
+link:bs-flags-pathway/langs/en-us/index.html[Narrative for
+bs-flags-pathway]
+
+link:pathwayP/langs/en-us/index.html[Narrative for pathwayP]
