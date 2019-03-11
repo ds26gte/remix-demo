@@ -5,8 +5,6 @@
 link:bs-flags-pathway/langs/en-us/index.html[Narrative for
 bs-flags-pathway]
 
-link:pathwayP/langs/en-us/index.html[Narrative for pathwayP]
-
 == Content repo
 
 Content is arranged in pathways and lessons. The repo contains
@@ -17,7 +15,7 @@ Each subdirectory of `pathways` is a pathway, e.g.,
 `bs-flags-pathway`.
 
 Each subdirectory of `lessons` is a lesson, e.g.,
-`intro-to-dilateions`, `image-transformations`,
+`intro-to-dilations`, `image-transformations`,
 `flags-of-the-world`.
 
 We drill down `langs/en-us` to get to the sample content. (I.e.,
