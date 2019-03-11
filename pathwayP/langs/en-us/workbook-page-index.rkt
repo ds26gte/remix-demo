@@ -1,0 +1,11 @@
+(
+("lessonA" "pageA1.adoc")
+("lessonA" "pageA2.adoc")
+("lessonA" "pageA3.adoc")
+("lessonC" "pageC1.adoc")
+("lessonC" "pageC2.adoc")
+("lessonC" "pageC3.adoc")
+("lessonB" "pageB1.adoc")
+("lessonB" "pageB2.adoc")
+("lessonB" "pageB3.adoc")
+)
