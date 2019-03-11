@@ -21,4 +21,88 @@ Each subdirectory of `lessons` is a lesson, e.g.,
 `flags-of-the-world`.
 
 We drill down `langs/en-us` to get to the sample content. (I.e.,
-for now we only have English-US, but more langs are envisaged.) == Pathway `bs-flags-pathway/langs/en-us` Here there is an adoc file for the pathway narrative. This is a single adoc file for now, but I can imagine multiple narratives, or maybe sub-adoc files included in the main one. If there is one chief narrative, we may want to standardize its name, e.g., `main.adoc` or `index.adoc`. The file `workbook-index.rkt` contains a (Racket) list of all the lessons, in order, contained in the pathway. The lesson names would be precisely the name of the corresponding subdirectories in the `lessons` hierarchy. A subdirectory `resources` contains additional files (adoc, Google Doc, PDF, whatever) that are referred to in the pathway narrative. == Lesson `lessons/langs/en-us/flags-of-the-world` Here there is an adoc file for the lesson plan (analog of the pathway narrative). Again, this is a single adoc file for now, but we can decide if there should be multiple or sub-files, and if the name should be standardized. The need for a standardized name is more compelling here, because this would ease reference by pathway narratives. The subdirectory `exercises` contains adoc files for design recipes, whether final or faulty. These would be referred to by the lesson plan. The subdirectory `images` contains image files (jpgs, pngs) referred to by the lesson plan. The subdirectory `workbook-pages` contains pages in the lesson that are constrained to be one page each. These are _not_ part of the lesson plan (although they could be), but rather the pages that are collated by pathway workbooks. The files can be either direct PDF or adoc files that will be converted to PDF. Further, there is a file `lesson-index.rkt` that contains a list of the lesson pages in the right order. == Building At the top directory, the call build-pathway bs-flags-pathway (or for completion convenience) build-pathway pathways/bs-flag-pathway constructs the workbook for `bs-flag-pathway` inside a newly created subdirectory `distribution`. It creates the pathway narrative HTML, its lesson PDFs, lesson plan HTML, and the pathway’s workbook PDF from its constitutent lesson PDFs. The resulting hierarchy looks like distribution/bs-flags-pathway/langs/en-us/ main.html                  # the pathway narrative, HTMLized workbook/workbook.pdf      # the pathway workbook lessons/ flags-of-the-world/ index.html  # the lesson plan, HTMLized ... other lessons ... The relevant CSS files are also available, as also the individual PDFs in case they need to be inspected separately. == ToDo - An option to the `build-pathway` script to construct two different workbooks, one with solutions, one without. A Travis CI that displays the finished narrative and workbook on a standard URL. 
+for now we only have English-US, but more langs are envisaged.)
+
+== Pathway `bs-flags-pathway/langs/en-us`
+
+Here there is an adoc
+file for the pathway narrative. This is a single adoc file for
+now, but I can imagine multiple narratives, or maybe sub-adoc
+files included in the main one. If there is one chief narrative,
+we may want to standardize its name, e.g., `main.adoc` or
+`index.adoc`.
+
+The file `workbook-index.rkt` contains a (Racket)
+list of all the lessons, in order, contained in the pathway. The
+lesson names would be precisely the name of the corresponding
+subdirectories in the `lessons` hierarchy.
+
+A subdirectory
+`resources` contains additional files (adoc, Google Doc, PDF,
+whatever) that are referred to in the pathway narrative.
+
+== Lesson `lessons/langs/en-us/flags-of-the-world`
+
+Here there is an
+adoc file for the lesson plan (analog of the pathway narrative).
+Again, this is a single adoc file for now, but we can decide if
+there should be multiple or sub-files, and if the name should be
+standardized. The need for a standardized name is more compelling
+here, because this would ease reference by pathway narratives.
+
+The subdirectory `exercises` contains adoc files for design
+recipes, whether final or faulty. These would be referred to by
+the lesson plan.
+
+The subdirectory `images` contains image files
+(jpgs, pngs) referred to by the lesson plan.
+
+The subdirectory
+`workbook-pages` contains pages in the lesson that are
+constrained to be one page each. These are _not_ part of the
+lesson plan (although they could be), but rather the pages that
+are collated by pathway workbooks. The files can be either direct
+PDF or adoc files that will be converted to PDF. Further, there
+is a file `lesson-index.rkt` that contains a list of the lesson
+pages in the right order.
+
+== Building
+
+At the top directory, the
+call
+
+  build-pathway bs-flags-pathway
+
+(or for completion
+convenience)
+
+  build-pathway pathways/bs-flag-pathway
+
+constructs
+the workbook for `bs-flag-pathway` inside a newly created
+subdirectory `distribution`. It creates the pathway narrative
+HTML, its lesson PDFs, lesson plan HTML, and the pathway’s
+workbook PDF from its constitutent lesson PDFs.
+
+The resulting
+hierarchy looks like
+
+  distribution/bs-flags-pathway/langs/en-us/
+     main.html                  # the pathway narrative, HTMLized
+     workbook/workbook.pdf      # the pathway workbook
+     lessons/
+           flags-of-the-world/ index.html  # the lesson plan, HTMLized
+           ... other lessons ...
+
+The relevant CSS files are also available, as
+also the individual PDFs in case they need to be inspected
+separately.
+
+== ToDo
+
+- An option to the `build-pathway` script to
+construct two different workbooks, one with solutions, one
+without.
+
+- A Travis CI that displays the finished narrative and
+workbook on a standard URL.
