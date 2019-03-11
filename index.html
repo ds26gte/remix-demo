@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>Untitled</title>
+<title>Curriculum remix quick-start</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -432,8 +432,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
+<h1>Curriculum remix quick-start</h1>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_demo_of_generated_docs">Demo of generated docs</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><a href="bs-flags-pathway/langs/en-us/index.html">Narrative for
 bs-flags-pathway</a></p>
@@ -442,9 +446,34 @@ bs-flags-pathway</a></p>
 <p><a href="pathwayP/langs/en-us/index.html">Narrative for pathwayP</a></p>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_content_repo">Content repo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content is arranged in pathways and lessons. The repo contains
+two separate directories for them, viz., <code>pathways</code> and
+<code>lessons</code>.</p>
+</div>
+<div class="paragraph">
+<p>Each subdirectory of <code>pathways</code> is a pathway, e.g.,
+<code>bs-flags-pathway</code>.</p>
+</div>
+<div class="paragraph">
+<p>Each subdirectory of <code>lessons</code> is a lesson, e.g.,
+<code>intro-to-dilateions</code>, <code>image-transformations</code>,
+<code>flags-of-the-world</code>.</p>
+</div>
+<div class="paragraph">
+<p>We drill down <code>langs/en-us</code> to get to the sample content. (I.e.,
+for now we only have English-US, but more langs are envisaged.) == Pathway <code>bs-flags-pathway/langs/en-us</code> Here there is an adoc file for the pathway narrative. This is a single adoc file for now, but I can imagine multiple narratives, or maybe sub-adoc files included in the main one. If there is one chief narrative, we may want to standardize its name, e.g., <code>main.adoc</code> or <code>index.adoc</code>. The file <code>workbook-index.rkt</code> contains a (Racket) list of all the lessons, in order, contained in the pathway. The lesson names would be precisely the name of the corresponding subdirectories in the <code>lessons</code> hierarchy. A subdirectory <code>resources</code> contains additional files (adoc, Google Doc, PDF, whatever) that are referred to in the pathway narrative. == Lesson <code>lessons/langs/en-us/flags-of-the-world</code> Here there is an adoc file for the lesson plan (analog of the pathway narrative). Again, this is a single adoc file for now, but we can decide if there should be multiple or sub-files, and if the name should be standardized. The need for a standardized name is more compelling here, because this would ease reference by pathway narratives. The subdirectory <code>exercises</code> contains adoc files for design recipes, whether final or faulty. These would be referred to by the lesson plan. The subdirectory <code>images</code> contains image files (jpgs, pngs) referred to by the lesson plan. The subdirectory <code>workbook-pages</code> contains pages in the lesson that are constrained to be one page each. These are <em>not</em> part of the lesson plan (although they could be), but rather the pages that are collated by pathway workbooks. The files can be either direct PDF or adoc files that will be converted to PDF. Further, there is a file <code>lesson-index.rkt</code> that contains a list of the lesson pages in the right order. == Building At the top directory, the call build-pathway bs-flags-pathway (or for completion convenience) build-pathway pathways/bs-flag-pathway constructs the workbook for <code>bs-flag-pathway</code> inside a newly created subdirectory <code>distribution</code>. It creates the pathway narrative HTML, its lesson PDFs, lesson plan HTML, and the pathway’s workbook PDF from its constitutent lesson PDFs. The resulting hierarchy looks like distribution/bs-flags-pathway/langs/en-us/ main.html                  # the pathway narrative, HTMLized workbook/workbook.pdf      # the pathway workbook lessons/ flags-of-the-world/ index.html  # the lesson plan, HTMLized &#8230;&#8203; other lessons &#8230;&#8203; The relevant CSS files are also available, as also the individual PDFs in case they need to be inspected separately. == ToDo - An option to the <code>build-pathway</code> script to construct two different workbooks, one with solutions, one without. A Travis CI that displays the finished narrative and workbook on a standard URL.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-03-10 23:51:47 EDT
+Last updated 2019-03-11 08:59:19 EDT
 </div>
 </div>
 </body>
